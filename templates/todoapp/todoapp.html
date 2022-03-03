@@ -1,0 +1,32 @@
+{% extends 'index.html' %} 
+
+{% block todoapp %}
+
+<div class="todoapp">
+  <div class="todo--sidebar">
+    <!-- sidebar -->
+    {% include 'includes/sidebar.html' %}
+  </div>
+
+  <div class="todo--main">
+<!-- create todo -->
+{% block todo_home_page %} {% endblock %}
+
+    
+    <!-- create todo -->
+    {% block todo_create %} {% endblock %}
+
+    <!-- todo list -->
+    {% block todo_list %} {% endblock %}
+
+    <!-- todo details -->
+    {% block todo_detail %} {% endblock %}
+
+    <!-- todo update -->
+    {% block todo_update %} {% endblock %}
+    <!-- todo update -->
+    {% block todo_delete_confirm %} {% endblock %}
+  </div>
+</div>
+
+{% endblock %}

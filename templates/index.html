@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- styles -->
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'Bootstrap/css/bootstrap.css' %}" />
+    <!-- font awesome -->
+    <!-- <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}" /> -->
+    <!-- local -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    {% include 'includes/navbar.html' %}
+
+    <main>
+ <!-- home page -->
+ {% block home_page %} {% endblock %}
+
+ <!-- about page -->
+ {% block about_page %} {% endblock %}
+
+ <!-- contact page -->
+ {% block contactus_page %} {% endblock %}
+
+ <!-- todo app page -->
+ {% block todoapp %} {% endblock %}
+    </main>
+
+   <footer>
+     This is a footer
+   </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- scripts -->
+    <!-- bootstrap -->
+    <script src="{% static 'Bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <!-- font awesome -->
+    <!-- <script src="{% static 'fontawesome/js/all.js' %}"></script> -->
+    <!-- local -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

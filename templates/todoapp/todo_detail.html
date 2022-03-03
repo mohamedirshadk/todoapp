@@ -1,0 +1,33 @@
+{% extends 'todoapp/todoapp.html' %} 
+
+{% block todo_list %}
+
+
+<table class="table table-dark table-striped table-hover mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Is Completed?</th>
+        <th scope="col">Created On</th>
+        <th scope="col">Updated On</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{object.title}}</td>
+        {% if object.is_completed %}
+
+        <td>Completed</td>
+
+        {% else %}
+        <td>Not Completed</td>
+        {% endif %}
+        <td>{{object.created_on}}</td>
+        <td>{{object.updated_on}}</td>
+        <td>{{object.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-body">
+    <form action="" method="post" class="form-horizontal">
+      {% csrf_token %} {{form}}
+
+      <button class="btn btn-primary" type="submit">
+        {% if form_btn_text %} {{form_btn_text}} {% else %} Submit {% endif %}
+        
+      </button>
+    </form>
+  </div>
+</div>

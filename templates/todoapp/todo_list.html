@@ -1,0 +1,40 @@
+{% extends 'todoapp/todoapp.html' %} {% block todo_list %} 
+
+
+
+{% block todo_item_delete %}{% endblock  %}
+
+<table class="table table-dark table-striped table-hover w-100 todo--list">
+  <thead>
+    <tr>
+      <th scope="col" colspan="3">Todo List</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in object_list %}
+    <tr>
+      <td class="p-3">{{item}}</td>
+      <td>
+        <button class="btn btn-light p-0 list-buttons">
+          <a class="nav-link" href="{% url 'todo_detail' item.id %}">Details</a>
+        </button>
+        <button class="btn btn-light p-0">
+          <a class="nav-link" href="{% url 'todo_update' item.id %}">Update</a>
+        </button>
+
+        {% comment %} model {% endcomment %}
+        <!-- Button trigger modal -->
+        <a
+          href="{% url 'todo_delete' item.id %}"
+          class="btn btn-danger"
+        >
+          Delete
+        </a>
+      </td>
+
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}
